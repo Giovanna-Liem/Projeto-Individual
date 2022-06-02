@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Avisos</title>
+    <title>Teamplay Gaming | Publicar post</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./dashboards.css">
@@ -185,7 +185,9 @@
 
     function atualizarFeed() {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        var sessionST = sessionStorage.ID_USUARIO
+        console.log(sessionST);
+        fetch(`/avisos/listarUser/${sessionST}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");

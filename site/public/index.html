@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>FPS Gaming</title>
+    <title>Teamplay Gaming | Página Inicial</title>
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"> -->
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <div class="container">
-            <div class="navbar_menu">
-                <a class="logo"><img src="assets/imgs/logo.png" alt=""></a>
-                <ul class="navbar">
-                    <a class="agora">Início</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contato.html">Contato</a>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="navbar_menu">
+          <a class="logo"><img src="assets/imgs/logo.png" alt="" /></a>
+          <ul class="navbar">
+            <a class="agora">Início</a>
+            <a href="blog.html">Blog</a>
+            <a href="contato.html">Contato</a>
+          </ul>
         </div>
+      </div>
 
-        <div class="btn_login">
-                <div class="btn_container">
-                    <div class="btn">
-                        <a href="login.html">Entrar</a>
-                    </div>
-                    <div class="btn">
-                        <a href="cadastro.html">Cadastre-se</a>
-                    </div>
-                </div>
+      <div class="btn_login">
+        <div class="btn_container">
+          <div class="btn">
+            <a href="login.html">Entrar</a>
+          </div>
+          <div class="btn">
+            <a href="cadastro.html">Cadastre-se</a>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="banner">
-        <div class="container">
-
-        </div>
+      <div class="container"></div>
     </div>
 
-
+    <!-- Slider main container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">CS:GO é um jogo que exige trabalho em equipe. Além de você praticar sua habilidade individual, o trabalho em equipe pode aumentar suas chances de ganhar o jogo.</div>
+        <div class="swiper-slide">Tome a iniciativa de jogar granadas para ajudar seu time mesmo quando não forem solicitadas.</div>
+        <div class="swiper-slide">É essencial que seja avisado antes de jogar uma flash bang.</div>
+        <div class="swiper-slide">Informação é essencial. Um mero detalhe de quanto dano você deu a um inimigo pode fazer a diferença no jogo.</div>
+        <div class="swiper-slide">Morrer no jogo pode ser frustrante, mas é importante manter o foco e rapidamente informar quantas pessoas você viu e em qual direção eles estavam indo.</div>
+        <div class="swiper-slide">Se a C4 for spotada no mapa é essencial avisar seu time para que possa haver a rotação para o bomb próximo da C4.</div>
+        <div class="swiper-slide">É importante que alguns players se posicionem com o simples objetivo de escutar a movimentação dos inimigos e comunicar ao time.</div>
+        <div class="swiper-slide">Não tenha medo de sugerir estratégias. Uma sugestão simples de rushar B pode ser o suficiente para ganhar um round.</div>
+        <div class="swiper-slide">Economia é muito importante no CS:GO, é essencial que nos rounds em que você tem mais dinheiro, que você se disponha a dropar uma arma.</div>
+        <div class="swiper-slide">É essencial que algum membro do time fique responsável por avisar aos colegas quando é hora de economizar dinheiro para o próximo round.</div>
+      </div>
+    </div>
 
     <!--footer inicio-->
     <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-            <h6>v1.0.1</h6>
-        </div>
+      <div class="container">
+        <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+        <h6>v1.0.1</h6>
+      </div>
     </div>
     <!--footer fim-->
-</body>
-
+  </body>
 </html>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
