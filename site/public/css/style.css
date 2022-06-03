@@ -1,3 +1,10 @@
+::root {
+  --gunmetal: #2C363F;
+  --redCrayola: #F51146;
+  --manatee: #8D98A7;
+  --cultured: #EDEDED;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
@@ -5,6 +12,7 @@ body {
   padding: 0;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
+  color: #ededed;
 }
 
 
@@ -20,7 +28,7 @@ body {
   display: flex;
 }
 
-.logo img{
+.logo img {
   padding-top: 4px;
   padding-bottom: 2px;
   width: 120px;
@@ -44,25 +52,77 @@ body {
   justify-content: space-around;
 }
 
-.navbar_menu{
+.navbar_menu {
   width: 100%;
   display: flex;
-  
+
 }
 
-.navbar li{
+.navbar li {
   justify-content: space-around;
 
 }
 
-.btn_login{
+.btn_login {
   width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.btn_container{
+.btn-cadastro {
+  width: 150px;
+  height: 50px;
+  border-radius: 180px;
+  position: relative;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  cursor: pointer;
+  line-height: 12px;
+}
+
+.btn-cadastro:before {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: 70%;
+  top: 15%;
+  left: 10%;
+  transition: 0.3s opacity ease-in-out;
+  filter: blur(15px);
+  opacity: 0;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+.btn-cadastro:hover:before {
+  opacity: 1;
+  transition: 0.3s opacity ease-in-out;
+  filter: blur(25px);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+.btn-cadastro:after {
+  content: 'cadastrar';
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: rgba(235, 235, 235, 1);
+  font-weight: bold;
+  z-index: 5;
+  position: absolute;
+  display: block;
+  border-radius: 180px;
+  width: 92%;
+  height: 80%;
+  top: 10%;
+  left: 4%;
+  background-color: rgb(19, 20, 22);
+}
+
+
+
+.btn_container {
   width: 50%;
   justify-content: space-around;
   display: flex;
@@ -85,7 +145,7 @@ body {
   align-items: center;
 }
 
-.tamanho-conteudo { 
+.tamanho-conteudo {
   height: fit-content !important;
 }
 
@@ -100,44 +160,43 @@ body {
   font-weight: 800;
 }
 
-/* missao visao valores */
-
-.social {
-  background-color: #e5e5e5;
+/* INFO */
+.info {
+  width: 100%;
   display: flex;
-}
-
-.social .container{
   justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
+.conteudo {
+  width: 70%;
+}
 
-.box {
-  margin-top: 50px;
+.content {
   display: flex;
-  flex-direction: column;
+}
+
+/* TEXTO */
+.texto {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
+.paragrafo {
+  width: 70%;
+  margin-right: 50px;
+}
+
+/* VIDEO */
+
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* FOOTER */
 
@@ -166,6 +225,7 @@ body {
   color: #fd1952;
   align-items: center;
   border-radius: 8px;
+  justify-content: center;
 }
 
 .card {
@@ -175,7 +235,7 @@ body {
 
 .card h2 {
   font-size: 26px;
-  color:#fff;
+  color: #ebebeb;
 }
 
 .card h4 {
@@ -192,7 +252,7 @@ button {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -209,30 +269,69 @@ button {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
 
 .formulario .tipo_campo {
   font-size: 18px;
-  font-weight: 600 !important;
+  font-weight: 400 !important;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .formulario {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+}
+
+.info-usuario {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.info-usuario .info1 {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.info-usuario .info2 {
+  width: 100%;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+
+.formulario-perfil {
+  width: 100%;
 }
 
 input {
   margin-bottom: 10px;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   border-top: 0;
   border-left: 0;
   border-right: 0;
   border-bottom: solid 2px #fd1952;
   background: transparent;
+  color: #fff;
+  outline: none;
+  width: 250px;
 }
 
 .btn {
@@ -249,6 +348,10 @@ input {
   align-self: center;
   margin-top: 5px;
   text-align: center;
+}
+
+.btn:hover>a {
+  color: #ebebeb;
 }
 
 .loading-div {
@@ -280,7 +383,7 @@ input {
   left: 0;
   z-index: 999;
   height: 100vh;
-  width: 25%;
+  width: 24%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -293,10 +396,9 @@ input {
 .dash-right {
   display: flex;
   width: 75%;
-  height: fit-content;
-  background-color: #161618;
+  height: 100vh;
   position: relative;
-  top: 0;
+  top: 50%;
   left: 25%;
 }
 
@@ -376,15 +478,22 @@ input {
 
 /* PAGINA CARDS*/
 
-.dados{
-  color:#fff;
+.dados {
+  margin-top: 5%;
+  color: #000000;
+  background-color: #EDEDED;
+  padding: 50px 100px;
+  border: 2px solid #F51146;
+  height: 100px;
+  width: 60%;
+  border-radius: 5px;
 }
 
 /* SWIPER */
 
 .swiper {
   box-sizing: border-box;
-  color:#fff;
+  color: #fff;
   width: 100%;
   height: 40px;
 }
