@@ -133,17 +133,15 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
                     
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.QTD_POSTS = json.qtdPosts;
-                    sessionStorage.DT_CADASTRO = json.dtCadastro;
-
+                    sessionStorage.EMAIL_USUARIO = json.resultado[0].email;
+                    sessionStorage.NOME_USUARIO = json.resultado[0].nome;
+                    sessionStorage.ID_USUARIO = json.resultado[0].id;
+                    sessionStorage.QTD_POSTS = json.respostaQtdPost[0].qtdPosts;
+                    sessionStorage.DT_CADASTRO = json.resultado[0].dtCadastro;
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
                     }, 1000); // apenas para exibir o loading
@@ -170,5 +168,15 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+    var dtCadastro = new Date();
+    var ano = dtCadastro.getFullYear()
+    var mes = dtCadastro.getMonth()+1
+    var dia = dtCadastro.getDay()
+    var formata = new Date(dtCadastro)
+
+    formata = formata.toLocaleString('pt-BR')
+
+    console.log(dia, mes, ano)
 
 </script>

@@ -16,6 +16,8 @@ function listar() {
             INNER JOIN usuario u
                 ON a.fk_usuario = u.id;
     `;
+
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

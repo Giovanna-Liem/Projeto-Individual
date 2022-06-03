@@ -39,15 +39,9 @@ function entrar(req, res) {
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
-
-                    if (resultado.length == 1) {
-                        console.log(resultado);
-                        res.json(resultado[0]);
-                    } else if (resultado.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
-                    } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
-                    }
+                    usuarioModel.qtdPosts().then(respostaQtdPost=>{
+                        res.json({resultado, respostaQtdPost})
+                    })
                 }
             ).catch(
                 function (erro) {

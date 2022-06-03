@@ -49,7 +49,7 @@
 
     <div class="janela">
         <div class="dash-right">
-            <div class="formulario-perfil">
+            <div id="formulario-perfil" class="formularioPerfil">
                 <div class="dados">
                     <div class="info-usuario">
                         <div class="info1"><img width="29px" style="margin: 2px;"src="../assets/imgs/person.png">Nome: <span id="b_nome">usuário</span></div>
@@ -75,6 +75,37 @@
     b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
     b_dtCadastro.innerHTML = sessionStorage.DT_CADASTRO;
     b_qtdPosts.innerHTML = sessionStorage.QTD_POSTS;
+
+    // window.onload= function(){
+
+    // fetch(`/usuarios/perfil/${id}`).then(function (resposta) {
+    //         console.log("ESTOU NO THEN DO entrar()!")
+
+    //         if (resposta.ok) {
+    //             console.log(resposta);
+
+    //             resposta.json().then(json => {
+    //                 console.log(json);
+    //                 console.log(JSON.stringify(json));
+                    
+    //                 sessionStorage.EMAIL_USUARIO = json.email;
+    //                 sessionStorage.NOME_USUARIO = json.nome;
+    //                 sessionStorage.ID_USUARIO = json.id;
+    //                 sessionStorage.DT_CADASTRO = json.dtCadastro;
+
+    //                 setTimeout(function () {
+    //                     window.location = "./dashboard/cards.html";
+    //                 }, 1000); // apenas para exibir o loading
+
+    //             });
+    //         }
+    //     }).catch(function (erro) {
+    //         console.log(erro);
+    //     })
+
+    // }
+    
+    // console.log(sessionStorage)
 
 
 </script>

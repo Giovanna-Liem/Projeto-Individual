@@ -20,4 +20,10 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.get("/listarPerfil", function (req, res, id) {
+    usuarioController.listarPerfil(req, res, + id);
+
+    console.log(id)
+});
+
 module.exports = router;
