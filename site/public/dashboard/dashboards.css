@@ -65,13 +65,17 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #F51146;
   width: 80px;
 }
 
 .titulo {
   color: #ebebeb;
   text-align: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .publicacao {
@@ -213,17 +217,6 @@ body {
   margin-top: 30px;
 }
 
-.graph {
-  width: 80%;
-  margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
-  display: flex;
-  justify-content: center;
-}
 
 .btn-chart {
   font-family: "Exo 2", sans-serif;

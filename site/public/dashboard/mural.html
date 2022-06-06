@@ -210,6 +210,7 @@
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
+                        var spandtPost = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
@@ -220,6 +221,7 @@
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        spandtPost.innerHTML = "Data da publicação: <b>" + publicacao.dtPublicacao + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
@@ -228,6 +230,7 @@
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
+                        spandtPost.value = "publicacao-nome";
 
                         divButtons.className = "div-buttons"
 
@@ -240,9 +243,10 @@
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
                         divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(spanNome);                                                
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
+                        divPublicacao.appendChild(spandtPost); 
                         divPublicacao.appendChild(divButtons);
                         divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);

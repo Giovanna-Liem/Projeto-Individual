@@ -28,7 +28,6 @@
           <ul class="navbar">
             <a class="agora">Início</a>
             <a href="blog.html">Blog</a>
-            <a href="contato.html">Contato</a>
           </ul>
         </div>
       </div>
@@ -90,6 +89,7 @@
               var spanID = document.createElement("span");
               var spanTitulo = document.createElement("span");
               var spanNome = document.createElement("span");
+              var spandtPost = document.createElement("span");
               var divDescricao = document.createElement("div");
               var divButtons = document.createElement("div");
             //   var btnEditar = document.createElement("button");
@@ -100,6 +100,7 @@
               spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
               divDescricao.innerHTML =
                 "Descrição: <b>" + publicacao.descricao + "</b>";
+              spandtPost.innerHTML = "Data da publicação: <b>" + publicacao.dtPublicacao + "</b>";
             //   btnEditar.innerHTML = "Editar";
             //   btnDeletar.innerHTML = "Deletar";
 
@@ -108,6 +109,7 @@
               spanNome.className = "publicacao-nome";
               spanTitulo.className = "publicacao-titulo";
               divDescricao.className = "publicacao-descricao";
+              spandtPost.className = "publicacao-data";
 
             //   divButtons.className = "div-buttons";
 
@@ -129,6 +131,7 @@
               divPublicacao.appendChild(spanNome);
               divPublicacao.appendChild(spanTitulo);
               divPublicacao.appendChild(divDescricao);
+              divPublicacao.appendChild(spandtPost);
               divPublicacao.appendChild(divButtons);
             //   divButtons.appendChild(btnEditar);
             //   divButtons.appendChild(btnDeletar);

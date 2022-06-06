@@ -169,7 +169,13 @@ body {
 }
 
 .conteudo {
+  padding-top: 30px;
   width: 70%;
+}
+
+.conteudo h3{
+  background-color: #F51146;
+  width: fit-content;
 }
 
 .content {
@@ -177,6 +183,16 @@ body {
 }
 
 /* TEXTO */
+
+.titulo {
+  color: #ebebeb;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .texto {
   width: 100%;
   display: flex;
@@ -456,7 +472,7 @@ input {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #F51146;
   color: white;
   border-radius: 10px;
   text-align: center;

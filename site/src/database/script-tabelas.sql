@@ -6,7 +6,6 @@ CREATE TABLE usuario (
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(20),
-    qtdPosts INT,
     dtCadastro DATE
 );
 
@@ -18,3 +17,5 @@ CREATE TABLE aviso (
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 ); 
+
+

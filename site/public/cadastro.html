@@ -30,7 +30,6 @@
                 <ul class="navbar">
                     <a href="index.html">Início</a>
                     <a href="blog.html">Blog</a>
-                    <a href="contato.html">Contato</a>
                 </ul>
             </div>
         </div>
@@ -123,10 +122,37 @@
 
             finalizarAguardar();
             return false;
+
+        } else if(senhaVar != confirmacaoSenhaVar){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Senhas diferentes, tenhe novamente!)";
+            
+            finalizarAguardar();
+            return false;
+
+        } else if(emailVar.indexOf('@') == -1){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Insira um email válido)";
+
+            finalizarAguardar();
+            return false;
         }
+
         else {
             setInterval(sumirMensagem, 5000)
         }
+
+        var hoje = new Date().setHours(0);  
+
+        hoje = new Date(hoje); 
+        // o comando setHours devolve a data em milisegundos então precisamos converter isso      
+
+        var dtCadastroVar = hoje.toLocaleDateString('pt-BR');
+        // como a data do brasil é diferente da americana, precisamos inverter ano, mês e ano, mas precisamos receber ela vinda do Brasil o toLocaleDateString só define de que lugar ela vai pegar os dados de dia e horario    
+         
+        dtCadastroVar = dtCadastroVar.split('/').reverse().join('-');
+
+        console.log(dtCadastroVar);
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -139,7 +165,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                dtCadastroServer: dtCadastroVar
             })
         }).then(function (resposta) {
 

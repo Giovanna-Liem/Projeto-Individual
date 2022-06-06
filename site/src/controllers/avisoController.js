@@ -69,6 +69,22 @@ function publicar(req, res) {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
+    var hoje = new Date().setHours(0);  
+
+    hoje = new Date(hoje); 
+    // o comando setHours devolve a data em milisegundos então precisamos converter isso      
+
+    var dtPublicacao = hoje.toLocaleDateString('pt-BR'); 
+
+    // como a data do brasil é diferente da americana, precisamos inverter ano, mês e ano, mas precisamos receber ela vinda do Brasil o toLocaleDateString só define de que lugar ela vai pegar os dados de dia e horario     
+    dtPublicacao = dtPublicacao.split('/').reverse().join('-');
+    console.log(dtPublicacao);
+
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    console.log(time)
+
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
@@ -77,7 +93,7 @@ function publicar(req, res) {
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        avisoModel.publicar(titulo, descricao, idUsuario, dtPublicacao, time)
             .then(
                 function (resultado) {
                     res.json(resultado);
